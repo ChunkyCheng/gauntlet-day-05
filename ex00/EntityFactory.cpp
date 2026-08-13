@@ -4,7 +4,7 @@
 #include "Boss.hpp"
 
 /*
-const std::map<std::string, EntityFactory::maker>	EntityFactory::FACTORY_MAP = {
+const std::unordered_map<std::string, EntityFactory::maker>	EntityFactory::FACTORY_MAP = {
 	{"orc",		[](void) { return (std::make_unique<Orc>()); } },
 	{"bat",		[](void) { return (std::make_unique<Bat>()); } },
 	{"boss",	[](void) { return (std::make_unique<Boss>()); } }

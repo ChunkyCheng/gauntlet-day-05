@@ -19,6 +19,6 @@ class	EntityFactory
 		//using maker = std::function<std::unique_ptr<Entity>(void)>;
 
 	private:
-		//static const std::map<std::string, maker>	FACTORY_MAP;
+		//static const std::unordered_map<std::string, maker>	FACTORY_MAP;
 };
 
