@@ -1,0 +1,5 @@
+OBJS/
+*.o
+spawn
+save
+visit
