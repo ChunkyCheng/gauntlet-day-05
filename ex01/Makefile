@@ -1,0 +1,29 @@
+NAME := save
+
+CXX      := c++
+CXXFLAGS := -Wall -Wextra -Werror -std=c++17
+
+SRCS := main.cpp	SaveGameFacade.cpp		Serializer.cpp		Compressor.cpp \
+					Checksum.cpp			Writer.cpp
+
+OBJS_DIR	:= OBJS
+OBJS		:= $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+$(OBJS_DIR)/%.o: %.cpp
+	@mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean:
+	rm -rf $(OBJS_DIR)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
